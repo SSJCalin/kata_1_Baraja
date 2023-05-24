@@ -1,5 +1,6 @@
 import random
 
+
 def crear_baraja(n, p):
     numeros = n
     palos = p
@@ -12,12 +13,14 @@ def crear_baraja(n, p):
 
     return baraja
 
+
 def barajar_for(baraja):
     for i in range(len(baraja)):
         j = random.randrange(len(baraja))
-        baraja[i], baraja[j] = baraja[j], baraja[i] 
+        baraja[i], baraja[j] = baraja[j], baraja[i]
 
     return baraja
+
 
 class Baraja:
     def __init__(self, numeros, palos):
@@ -37,15 +40,13 @@ class Baraja:
         for p in range(jugadores):
             players.append([])
 
-
         for num_carta in range(mano):
-            
+
             for jugador in range(jugadores):
                 carta = self.naipes.pop(0)
                 players[jugador].append(carta)
 
         return players
-
 
     def repartir_como_los_niños(self, mano, jugadores):
         players = []
@@ -55,5 +56,3 @@ class Baraja:
                 carta = self.naipes.pop(0)
                 grupo.append(carta)
             players.append(grupo)
-
-
